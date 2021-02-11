@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import isEmpty from "lodash.isempty";
 import { motion } from "framer-motion";
+import EndPoem from "./EndPoem";
 
 const Poem = ({ poem }) => {
   const [isVisible, setIsVisible] = useState(true);
@@ -10,7 +11,10 @@ const Poem = ({ poem }) => {
   useEffect(() => {
     let interval = null;
 
-    if (isEmpty(poem) === false && currentLineNumber <= poem[0].lines.length - 1) {
+    if (
+      isEmpty(poem) === false &&
+      currentLineNumber <= poem[0].lines.length - 1
+    ) {
       interval = setInterval(() => {
         setIsVisible(true);
         setCurrentLineNumber((currentLineNumber) => currentLineNumber + 1);
@@ -22,11 +26,13 @@ const Poem = ({ poem }) => {
   }, [currentLineNumber, poem]);
 
   return (
-    <div>
-      <motion.p animate={{ opacity: isVisible ? 1 : 0 }}>
+    <div className="poem-container">
+      <motion.p className="poem" animate={{ opacity: isVisible ? 1 : 0 }}>
         {" "}
         {currentLine}
       </motion.p>
+      {isEmpty(poem) === false &&
+        currentLineNumber === poem[0].lines.length && <EndPoem poem={poem} />}
     </div>
   );
 };

@@ -19,7 +19,6 @@ function App() {
   const setPoemHandler = async () => {
     if (title.length > 0) {
       const url = `https://poetrydb.org/author,title/Emily%20Dickinson;${title}`;
-      console.log(url);
       const data = await fetch(url);
       const json = await data.clone().json();
 
