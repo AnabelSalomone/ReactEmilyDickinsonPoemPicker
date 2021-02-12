@@ -6,6 +6,11 @@ body {
   margin: 0;
 }
 
+.searchbar-conteiner {
+  display: flex;
+  justify-content: center;
+}
+
 .titles-conteiner {
   display: flex;
   justify-content: center;
