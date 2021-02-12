@@ -16,8 +16,8 @@ const PoemPicker = ({ titles, setTitleHandler, setPoemHandler }) => {
   return (
     <div>
       {titles.map((title) => (
-        <div onClick={() => setDataHandler(title.title)}>
-          <p onClick={handleClick}>{title.title}</p>
+        <div className="titles-conteiner" onClick={() => setDataHandler(title.title)}>
+          <p className="poem-title" onClick={handleClick}>{title.title}</p>
         </div>
       ))}
     </div>
