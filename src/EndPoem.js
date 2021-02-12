@@ -20,15 +20,15 @@ const EndPoem = ({ poem }) => {
           <TwitterShareButton
             options={{
               url: "",
-              text: `${poem[0].lines[0]}`,
+              text: `${poem[0].lines}`,
               via: "mmanzanna",
               screenName: null,
             }}
           />
-          <div className="go-back-button" onClick={handleClick}>
+          <button className="go-back-button" onClick={handleClick}>
             {" "}
             Go back to list
-          </div>
+          </button>
         </div>
       </motion.div>
     );
