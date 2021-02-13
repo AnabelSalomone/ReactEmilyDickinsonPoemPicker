@@ -12,6 +12,31 @@ body {
   font-family: "Tajawal", sans-serif;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  height: 8rem;
+}
+
+.header img {
+  height: 40rem;
+  position: absolute;
+  right: 16px;
+  right: 0;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1)
+  );
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+.header h1 {
+  margin: 0 1rem;
+}
+
 .searchbar-conteiner {
   margin: 20px;
 }
@@ -19,15 +44,16 @@ body {
 .searchbar-conteiner input {
   border: 0;
   background-color: black;
+  color: white;
   border-bottom: 1px solid #b4becb;
+  width: 15rem;
+  margin-right: 4rem;
 }
 
 .poem-title {
   display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
-  margin: 4px;
+  margin: 4px 0;
 }
 
 .poem-title:hover {
@@ -64,5 +90,19 @@ body {
 
 .flex {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 992px) {
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header img {
+    display: none;
+  }
 }

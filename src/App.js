@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PoemPicker from "./PoemPicker";
 import Poem from "./Poem";
+import Header from './Header'
 
 function App() {
   const [titles, setTitles] = useState([{}]);
@@ -36,6 +37,7 @@ function App() {
 
   return (
     <Router>
+      <Header/>
       <Switch>
         <Route path="/" strict exact>
           <PoemPicker

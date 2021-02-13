@@ -8,6 +8,7 @@ const PoemPicker = ({ titles, setTitleHandler, setPoemHandler }) => {
   const [filteredTitles, setFilteredTitles] = useState(titles);
 
   function handleClick(title) {
+    console.log(title)
     setTitleHandler(title);
     setPoemHandler();
     history.push("/poem");
@@ -32,7 +33,7 @@ const PoemPicker = ({ titles, setTitleHandler, setPoemHandler }) => {
       <SearchBar filterTitles={filterTitles} />
       <div>
         {filteredTitles.map((title) => (
-          <p className="poem-title" onClick={handleClick}>
+          <p className="poem-title" onClick={() => handleClick(title.title)}>
             {title.title}
           </p>
         ))}
