@@ -7,12 +7,9 @@ const PoemPicker = ({ titles, setTitleHandler, setPoemHandler }) => {
 
   const [filteredTitles, setFilteredTitles] = useState(titles);
 
-  const setDataHandler = (title) => {
+  function handleClick(title) {
     setTitleHandler(title);
     setPoemHandler();
-  };
-
-  function handleClick() {
     history.push("/poem");
   }
 
@@ -31,18 +28,15 @@ const PoemPicker = ({ titles, setTitleHandler, setPoemHandler }) => {
   }, [titles]);
 
   return (
-    <div>
+    <div className="flex">
       <SearchBar filterTitles={filterTitles} />
-      {filteredTitles.map((title) => (
-        <div
-          className="titles-conteiner"
-          onClick={() => setDataHandler(title.title)}
-        >
+      <div>
+        {filteredTitles.map((title) => (
           <p className="poem-title" onClick={handleClick}>
             {title.title}
           </p>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

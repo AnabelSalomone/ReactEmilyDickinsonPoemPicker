@@ -13,8 +13,6 @@ body {
 }
 
 .searchbar-conteiner {
-  display: flex;
-  justify-content: center;
   margin: 20px;
 }
 
@@ -24,13 +22,10 @@ body {
   border-bottom: 1px solid #b4becb;
 }
 
-.titles-conteiner {
+.poem-title {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.poem-title {
   cursor: pointer;
   margin: 4px;
 }
@@ -65,4 +60,9 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-evenly;
 }
