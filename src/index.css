@@ -32,6 +32,11 @@ body {
 
 .poem-title {
   cursor: pointer;
+  margin: 4px;
+}
+
+.poem-title:hover {
+  font-weight: bold;
 }
 
 .poem-container {
